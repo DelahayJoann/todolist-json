@@ -40,8 +40,8 @@
 
     // List element class
     class ToDoElement{
-        private $content;
-        private $archived;
+        public $content;
+        public $archived;
         public function __construct(string $content, bool $archived = FALSE){
             $this->content = $content;
             $this->archived = $archived;
@@ -60,7 +60,22 @@
     $myToDoElement = new ToDoElement("test");
     $myToDo->addToDoElement($myToDoElement);
 
-    echo '<pre>';
+    $myToDoElement2 = new ToDoElement("test2");
+    $myToDo->addToDoElement($myToDoElement2);
+
+    $myToDoElement3 = new ToDoElement("test3");
+    $myToDo->addToDoElement($myToDoElement3);
+
+    $myToDoElement4 = new ToDoElement("test4");
+    $myToDo->addToDoElement($myToDoElement4);
+
+    $myToDoElement5 = new ToDoElement("test5");
+    $myToDo->addToDoElement($myToDoElement5);
+
+    $myToDoElement6 = new ToDoElement("test6");
+    $myToDo->addToDoElement($myToDoElement6);
+
+    /* echo '<pre>';
     print_r($myToDo);
     echo '</pre>';
 
@@ -74,7 +89,7 @@
 
     echo '<pre>';
     print_r($temp);
-    echo '</pre>';
+    echo '</pre>'; */
 
 ?>
 
@@ -94,7 +109,7 @@
   <div class="container" id="aFaire">
       <div class="row">
         <form action="./contenu.php" method="post" name="form_aFaire">
-
+        <?php echo implode("<br>\n", array_column($myToDo->getToDoElements(), "content")); ?>
         <button type="submit"></button>
         </form>
       </div>
