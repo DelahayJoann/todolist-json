@@ -75,21 +75,6 @@
     $myToDoElement6 = new ToDoElement("test6");
     $myToDo->addToDoElement($myToDoElement6);
 
-    /* echo '<pre>';
-    print_r($myToDo);
-    echo '</pre>';
-
-    $myToDo->save('ToDoList');
-
-    $temp = new ToDoList();
-    $temp->load('ToDoList');
-
-    $elems = $temp->getToDoElements();
-    $elems[0]->setArchived(true);
-
-    echo '<pre>';
-    print_r($temp);
-    echo '</pre>'; */
 
 ?>
 
@@ -109,7 +94,7 @@
   <div class="container" id="aFaire">
       <div class="row">
         <form action="./contenu.php" method="post" name="form_aFaire">
-        <?php echo implode("<br>\n", array_column($myToDo->getToDoElements(), "content")); ?>
+        <?php echo '<p>'.implode("<p>", array_column($myToDo->getToDoElements(), "content")).'</p>'; ?>
         <button type="submit"></button>
         </form>
       </div>
