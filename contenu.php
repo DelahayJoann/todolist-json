@@ -18,16 +18,16 @@
         public function save(string $fileName){
             $s = serialize($this);
             try{
-                file_put_contents('./'.$fileName, $s);
+                file_put_contents($fileName, $s);
             }catch(Exception $err){
                 echo "Something goes wrong";
                 echo $err;
             }
             
         }
-        public function load(string $fileName = 'ToDoList'){
+        public function load(string $fileName = 'ToDoList.serial'){
             try{
-                $tmp = unserialize(file_get_contents('./'.$fileName));
+                $tmp = unserialize(file_get_contents($fileName));
                 $this->toDo = $tmp->toDo;
             }catch(Exception $err){
                 echo "Something goes wrong";
@@ -57,23 +57,23 @@
     // New instance of ToDoList class
     $myToDo = new ToDoList();
 
-    if (file_exists('ToDoList')) {
-        $myToDo->load('toDoList');
+    if (file_exists('todolist.serial')) {
+        $myToDo->load('todolist.serial');
     } else {
-        $myToDo->save('toDoList');      
+        $myToDo->save('todolist.serial');      
     }
 
 if(isset($_POST['checkedId'])){
     $tmpArray = $myToDo->getToDoElements();
     $tmpArray[$_POST['checkedId']]->setChecked();
-    $myToDo->save('todolist');
+    $myToDo->save('todolist.serial');
     $_POST = array();
 }
 if(isset($_POST['task'])){
     foreach ($_POST['task'] as $key => $value){
         $myToDo->getToDoElements()[$value]->setArchived(TRUE);
     }
-    $myToDo->save('todolist');
+    $myToDo->save('todolist.serial');
     $_POST = array();
 }
 if(isset($_POST['addTask'])){
@@ -84,7 +84,7 @@ if(isset($_POST['addTask'])){
         $string = filter_var($string, FILTER_SANITIZE_STRING);
         $taskElem = new ToDoElement($string);
         $myToDo->addToDoElement($taskElem);
-        $myToDo->save('todolist');
+        $myToDo->save('todolist.serial');
         $_POST = array();
     }
 }
@@ -97,7 +97,7 @@ if(isset($_POST['swapId1'],$_POST['swapId2'])){
     $myToDoArray[intval($_POST['swapId2'])] = $tmp;
 
     $myToDo->setToDoElements($myToDoArray);
-    $myToDo->save('todolist');
+    $myToDo->save('todolist.serial');
     $_POST = array();
 }
 ?>
