@@ -4,7 +4,6 @@
 print_r($myToDo);
 echo '</pre>'; */
 ?>
-<!doctype html>
 <html lang="fr">
     <head>
         <title>ToDo List</title>
