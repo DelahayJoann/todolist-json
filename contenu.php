@@ -23,7 +23,7 @@
         public function save(string $fileName){
             $s = serialize($this);
             try{
-                file_put_contents($fileName, $s);
+                file_put_contents('./'.$fileName, $s);
             }catch(Exception $err){
                 echo "Something goes wrong";
                 echo $err;
@@ -32,7 +32,7 @@
         }
         public function load(string $fileName = 'ToDoList'){
             try{
-                $tmp = unserialize(file_get_contents($fileName));
+                $tmp = unserialize(file_get_contents('./'.$fileName));
                 $this->toDo = $tmp->toDo;
             }catch(Exception $err){
                 echo "Something goes wrong";

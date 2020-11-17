@@ -1,4 +1,4 @@
-<?php include('contenu.php'); ?>
+<?php include('./contenu.php'); ?>
 <html lang="fr">
     <head>
         <title>ToDo List</title>
@@ -14,7 +14,7 @@
         <script>
             function boxChecked(key){      
                 $.ajax({
-                    url : 'contenu.php',
+                    url : './contenu.php',
                     type : 'POST',
                     data : 'checkedId=' + key
                 }); 
@@ -27,7 +27,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "contenu.php",
+                    url: "./contenu.php",
                     data: formData
                 });
             });
@@ -39,7 +39,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "contenu.php",
+                    url: "./contenu.php",
                     data: formData
                 });
             });
