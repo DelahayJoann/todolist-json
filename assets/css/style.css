@@ -32,6 +32,10 @@ input {
   border: 3px dotted #666;
 }
 
+.box {
+  cursor: move;
+}
+
 #currentTask {
   border: 1px solid black;
   border-radius: 15px;
