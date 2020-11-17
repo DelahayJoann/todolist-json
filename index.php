@@ -1,9 +1,4 @@
 <?php include('contenu.php'); ?>
-<?php
-/* echo '<pre>';
-print_r($myToDo);
-echo '</pre>'; */
-?>
 <html lang="fr">
     <head>
         <title>ToDo List</title>
