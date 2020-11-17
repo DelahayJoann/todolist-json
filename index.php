@@ -17,7 +17,12 @@
                     url : './contenu.php',
                     type : 'POST',
                     data : 'checkedId=' + key
-                });                
+                });
+                if(!document.querySelector('#form_aFaire #task-'+key).hasAttribute('checked')){
+                    document.querySelector('#form_aFaire #task-'+key).setAttribute('checked','true');
+                }else{
+                    document.querySelector('#form_aFaire #task-'+key).removeAttribute('checked');
+                }      
             };
 
             $("#form_aFaire").submit(function(event) {
@@ -58,7 +63,7 @@
                     <?php echo implode("", array_map(
                         function($k,$v,$l,$a){
                             if(!$a){
-                                if($l){ return '<div draggable="true" id='.$k.' class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');" checked>'.$v.'</div>';}
+                                if($l){ return '<div draggable="true" id='.$k.' class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');" checked="true">'.$v.'</div>';}
                                 return '<div draggable="true" id='.$k.' class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');">'.$v.'</div>';
                             }
                         },
