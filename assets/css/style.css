@@ -1,5 +1,54 @@
+body {
+  background-color: #b0c7e9;
+  color: #1100ff;
+}
+
+button {
+  background-color: darkgray;
+  color: #1100ff;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+input {
+  margin-right: 20px;
+}
+
+.container {
+  width: 500px;
+  margin: auto;
+}
+
+.box, .archived {
+  height: 30px;
+  margin-top: 10px;
+}
+
+#form_addTask {
+  height: 30px;
+}
+
 .box.over {
   border: 3px dotted #666;
+}
+
+#currentTask {
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+#addTask {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 140px;
+}
+#addTask #task {
+  resize: none;
+}
+
+#archivedTask {
+  border: 1px solid black;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
