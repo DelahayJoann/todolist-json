@@ -17,6 +17,9 @@
         public function getToDoElements(){
             return $this->toDo;
         }
+        public function setToDoElements($theArray){
+            $this->toDo = $theArray;
+        }
         public function save(string $fileName){
             $s = serialize($this);
             try{
@@ -51,14 +54,8 @@
         public function setArchived(bool $bool){
             $this->archived = $bool;
         }
-        public function getArchived(){
-            return $this->archived;
-        }
         public function setChecked(){
             ($this->checked)? $this->checked = FALSE : $this->checked = TRUE;
-        }
-        public function getChecked(){
-            return $this->checked;
         }
     }
 
@@ -68,16 +65,7 @@
     if (file_exists('ToDoList')) {
         $myToDo->load('toDoList');
     } else {
-        $myToDoElement = new ToDoElement('test1');
-        $myToDo->addToDoElement($myToDoElement);
-        $myToDoElement2 = new ToDoElement('test2');
-        $myToDo->addToDoElement($myToDoElement2);
-        $myToDoElement3 = new ToDoElement('test3');
-        $myToDo->addToDoElement($myToDoElement3);
-        $myToDoElement4 = new ToDoElement('test4');
-        $myToDo->addToDoElement($myToDoElement4);
-        $myToDo->save('toDoList');
-        
+        $myToDo->save('toDoList');      
     }
 
 if(isset($_POST['checkedId'])){
@@ -90,6 +78,30 @@ if(isset($_POST['task'])){
     foreach ($_POST['task'] as $key => $value){
         $myToDo->getToDoElements()[$value]->setArchived(TRUE);
     }
+    $myToDo->save('todolist');
+    $_POST = array();
+}
+if(isset($_POST['addTask'])){
+    if(!empty($_POST['addTask'])){
+        $string = trim($_POST['addTask']);
+        $string = strip_tags($_POST['addTask']);
+        $string = filter_var($string, FILTER_SANITIZE_MAGIC_QUOTES);
+        $string = filter_var($string, FILTER_SANITIZE_STRING);
+        $taskElem = new ToDoElement($string);
+        $myToDo->addToDoElement($taskElem);
+        $myToDo->save('todolist');
+        $_POST = array();
+    }
+}
+if(isset($_POST['swapId1'],$_POST['swapId2'])){
+    $myToDoArray = $myToDo->getToDoElements();
+
+    $tmp = $myToDoArray[$_POST['swapId1']];
+
+    $myToDoArray[intval($_POST['swapId1'])] = $myToDoArray[intval($_POST['swapId2'])];
+    $myToDoArray[intval($_POST['swapId2'])] = $tmp;
+
+    $myToDo->setToDoElements($myToDoArray);
     $myToDo->save('todolist');
     $_POST = array();
 }
