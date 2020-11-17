@@ -1,9 +1,4 @@
 <?php
-    header( "Content-Type: text/html; charset=utf8" );
-    setlocale (LC_ALL, 'fr_FR.utf8');
-    date_default_timezone_set('Europe/Paris');
-    mb_internal_encoding("UTF-8");
-
     // The list class
     class ToDoList{
         private $toDo = [];
