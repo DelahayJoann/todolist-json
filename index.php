@@ -64,7 +64,7 @@
                     <?php echo implode("", array_map(
                         function($k,$v,$l,$a){
                             if(!$a){
-                                if($l){ return '<div draggable="true" class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');" checked>'.$v.'</div>';}
+                                if($l){ return '<div draggable="true" class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');" checked="True">'.$v.'</div>';}
                                 return '<div draggable="true" class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');">'.$v.'</div>';
                             }
                         },
