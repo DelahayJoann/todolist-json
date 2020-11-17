@@ -53,7 +53,7 @@
             
             <!-- FORM TASK LIST -->
             <div class="row d-flex flex-column pt-4 pl-4 pr-4" id="currentTask">
-                <h4>Task To Do:</h4>
+                <h4>Tasks To Do:</h4>
                 <form class="dragContainer m-0" action="" method="post" id="form_aFaire" name="form_aFaire">
                     <?php echo implode("", array_map(
                         function($k,$v,$l,$a){
@@ -82,7 +82,7 @@
 
             <!-- ARCHIVED TASK -->
             <div class="row d-flex flex-column p-4" id="archivedTask">
-                <h4>Archived Task:</h4>
+                <h4>Archived Tasks:</h4>
                 <div>
                     <?php echo implode("", array_map(
                         function($v,$a){
