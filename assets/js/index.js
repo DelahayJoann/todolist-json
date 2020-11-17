@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
         return false;
     }
-  
+
     function handleDragEnter(e) {
         this.classList.add('over');
     }
