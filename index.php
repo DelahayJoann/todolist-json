@@ -53,6 +53,7 @@
             
             <!-- FORM TASK LIST -->
             <div class="row d-flex flex-column pt-4 pl-4 pr-4" id="currentTask">
+                <h4>Task To Do:</h4>
                 <form class="dragContainer m-0" action="" method="post" id="form_aFaire" name="form_aFaire">
                     <?php echo implode("", array_map(
                         function($k,$v,$l,$a){
@@ -72,6 +73,7 @@
 
             <!-- ADD TASK -->
             <div class="row d-flex justify-content-center p-4" id="addTask">
+                <h4>Add Task To Do:</h4>
                 <form action="" method="post" id="form_addTask" name="form_addTask">
                     <textarea name="addTask" id="task" cols="30" rows="2" class="col-12"></textarea>
                     <button type="submit">Ajouter</button>
@@ -80,6 +82,7 @@
 
             <!-- ARCHIVED TASK -->
             <div class="row d-flex flex-column p-4" id="archivedTask">
+                <h4>Archived Task:</h4>
                 <div>
                     <?php echo implode("", array_map(
                         function($v,$a){

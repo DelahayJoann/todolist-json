@@ -40,7 +40,7 @@ input {
 #addTask {
   border: 1px solid black;
   border-radius: 15px;
-  height: 140px;
+  height: 240px;
 }
 #addTask #task {
   resize: none;
