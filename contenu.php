@@ -20,7 +20,7 @@
         }
         
         public function getArchivedElements(){
-            return $this->archive;
+            return array_reverse($this->archive,false);
         }
         public function setToDoElements($theArray){
             $this->toDo = $theArray;

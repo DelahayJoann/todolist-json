@@ -1,7 +1,7 @@
 <?php include('./contenu.php'); ?>
 <?php
 /* echo '<pre>';
-print_r(array_keys($myToDo->getToDoElements()));
+print_r($myToDo->getArchivedElements());
 echo '</pre>'; */
 ?>
 <html lang="fr">
@@ -97,7 +97,7 @@ echo '</pre>'; */
                         function($v){
                                 echo '<s><div class="archived"><input type="checkbox" checked disabled="disabled">'.$v.'</div></s>';
                         },
-                        array_reverse(array_values(array_column(array_slice($myToDo->getArchivedElements(), 0, 7), "content"))),
+                        array_values(array_column(array_slice($myToDo->getArchivedElements(), 0, 7,true), "content")),
                     ); ?>
                 </div>
             </div>
