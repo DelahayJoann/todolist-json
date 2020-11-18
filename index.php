@@ -59,6 +59,8 @@ echo '</pre>'; */
 
   <!-- BODY -->
   <body>
+      <p style='font-size: 12px;'>Only 7 first tasks added are display. You can still add more but they'll only appear when you archive already displayed tasks.</p>
+      <p style='font-size: 12px;'>Only 7 last archived tasks are display.</p>
     <div class="container" id="aFaire">
             
             <!-- FORM TASK LIST -->
