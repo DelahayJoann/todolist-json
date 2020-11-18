@@ -4,17 +4,22 @@ body{
     color: rgb(17, 0, 255);
     font:{
         family: 'Alfa Slab One', cursive;
-        weight:normal;
+        weight: normal;
     }
 }
 h4{
     font-size: 30px;
+    text-align: center;
+    color: #744242b4;
 }
 button{
     background-color: darkgray;
-    color: rgb(17, 0, 255);
+    color:  #5f3535;
     border-radius: 5px;
     padding: 5px 10px;
+    margin-top: 10px;
+    background-image: url("../img/metalic2.jpg");
+    text-shadow: 1px 2px 3px rgba(255, 255, 255, 0.7);
 }
 input{
     margin-right: 20px;
@@ -44,10 +49,6 @@ input{
             url('../img/metal-plaque.jpg');
             background-size: 100% auto;
 
-    h4{
-        text-align: center;
-        color: #744242b4;
-    }
     #form_aFaire{
         background:
             url('../img/rouille.jpg') no-repeat center center text;
@@ -67,7 +68,7 @@ input{
             box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
         }
         input[type="checkbox"]:checked {
-            background-color: #744242;
+            background-color: #5f3535;
             border: 1px solid #adb8c0;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
             color: #99a1a7;
@@ -79,10 +80,7 @@ input{
     background:
             url('../img/metal-plaque.jpg');
             background-size: 100% auto;
-    h4{
-        text-align: center;
-        color: #744242b4;
-    }
+
     border: 1px solid black;
     border-radius: 15px;
     height: 200px;
@@ -91,16 +89,18 @@ input{
     }
     #form_addTask{
         text-align: center;
+        background-color: transparent;
+        textarea{
+            background: url("../img/metal-plaque.jpg") center center no-repeat;
+            color: #744242b4;
+        }
     }
 }
 #archivedTask{
     background:
             url('../img/metal-plaque.jpg');
             background-size: 100% auto;
-    h4{
-        text-align: center;
-        color: #744242b4;
-    }
+
     border: 1px solid black;
     border-radius: 15px;
     #archivedDiv{
@@ -122,7 +122,7 @@ input{
             box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
         }
         input[type="checkbox"]:checked {
-            background-color: #744242;
+            background-color: #5f3535;
             border: 1px solid #adb8c0;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
             color: #99a1a7;

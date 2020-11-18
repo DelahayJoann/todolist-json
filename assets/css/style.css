@@ -8,13 +8,18 @@ body {
 
 h4 {
   font-size: 30px;
+  text-align: center;
+  color: #744242b4;
 }
 
 button {
   background-color: darkgray;
-  color: #1100ff;
+  color: #5f3535;
   border-radius: 5px;
   padding: 5px 10px;
+  margin-top: 10px;
+  background-image: url("../img/metalic2.jpg");
+  text-shadow: 1px 2px 3px rgba(255, 255, 255, 0.7);
 }
 
 input {
@@ -49,10 +54,6 @@ input {
   background: url("../img/metal-plaque.jpg");
   background-size: 100% auto;
 }
-#currentTask h4 {
-  text-align: center;
-  color: #744242b4;
-}
 #currentTask #form_aFaire {
   background: url("../img/rouille.jpg") no-repeat center center text;
   background-size: 100%;
@@ -72,7 +73,7 @@ input {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 #currentTask #form_aFaire input[type=checkbox]:checked {
-  background-color: #744242;
+  background-color: #5f3535;
   border: 1px solid #adb8c0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
   color: #99a1a7;
@@ -85,15 +86,16 @@ input {
   border-radius: 15px;
   height: 200px;
 }
-#addTask h4 {
-  text-align: center;
-  color: #744242b4;
-}
 #addTask #task {
   resize: none;
 }
 #addTask #form_addTask {
   text-align: center;
+  background-color: transparent;
+}
+#addTask #form_addTask textarea {
+  background: url("../img/metal-plaque.jpg") center center no-repeat;
+  color: #744242b4;
 }
 
 #archivedTask {
@@ -101,10 +103,6 @@ input {
   background-size: 100% auto;
   border: 1px solid black;
   border-radius: 15px;
-}
-#archivedTask h4 {
-  text-align: center;
-  color: #744242b4;
 }
 #archivedTask #archivedDiv {
   background: url("../img/rouille.jpg") no-repeat center center text;
@@ -125,7 +123,7 @@ input {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 #archivedTask #archivedDiv input[type=checkbox]:checked {
-  background-color: #744242;
+  background-color: #5f3535;
   border: 1px solid #adb8c0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
   color: #99a1a7;
