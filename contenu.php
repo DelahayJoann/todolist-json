@@ -101,6 +101,7 @@
         $tmpArray[$_POST['checkedId']]->setChecked();
         $myToDo->save('todolist.serial');
         $_POST = array();
+        header("Location: .");
     }
     if(isset($_POST['task'])){
         foreach ($_POST['task'] as $key => $value){
@@ -108,6 +109,7 @@
         }
         $myToDo->save('todolist.serial');
         $_POST = array();
+        header("Location: .");
     }
     if(isset($_POST['addTask'])){
         if(!empty($_POST['addTask'])){
@@ -119,6 +121,7 @@
             $myToDo->addToDoElement($taskElem);
             $myToDo->save('todolist.serial');
             $_POST = array();
+            header("Location: .");
         }
     }
     if(isset($_POST['swapId1'],$_POST['swapId2'])){
@@ -132,5 +135,6 @@
         $myToDo->setToDoElements($myToDoArray);
         $myToDo->save('todolist.serial');
         $_POST = array();
+        header("Location: .");
     }
 ?>

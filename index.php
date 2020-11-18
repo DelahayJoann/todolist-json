@@ -1,5 +1,6 @@
 <?php include('./contenu.php'); ?>
 <?php
+ob_start();
 /* echo '<pre>';
 print_r($myToDo->getArchivedElements());
 echo '</pre>'; */
