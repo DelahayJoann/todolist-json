@@ -52,8 +52,10 @@ input{
 
     #form_aFaire{
         background:
-            url('../img/rouille.jpg') no-repeat center center text;
+            url('../img/rouille.jpg') no-repeat center center;
             background-size:100%;
+            background-clip: text;
+            -webkit-background-clip: text;
         color: transparent;
         text-align:center;
         letter-spacing: 1px;
@@ -108,8 +110,10 @@ input{
     border-radius: 15px;
     #archivedDiv{
         background:
-            url('../img/rouille.jpg') no-repeat center center text;
+            url('../img/rouille.jpg') no-repeat center center;
             background-size:100%;
+            background-clip: text;
+            -webkit-background-clip: text;
         color: transparent;
         text-align:center;
         letter-spacing: 1px;
