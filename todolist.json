@@ -1,0 +1,22 @@
+[
+    {
+        "content": "TEST 1",
+        "checked": true,
+        "archived": false
+    },
+    {
+        "content": "TEST 2",
+        "checked": true,
+        "archived": true
+    },
+    {
+        "content": "TEST3",
+        "checked": true,
+        "archived": false
+    },
+    {
+        "content": "TEST 4",
+        "checked": false,
+        "archived": false
+    }
+]

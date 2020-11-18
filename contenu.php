@@ -2,6 +2,7 @@
     // The list class
     class ToDoList{
         private $toDo = [];
+        private $toDo2 = []; // JSON test purpose
 
         public function __construct(){
 
@@ -15,7 +16,7 @@
         public function setToDoElements($theArray){
             $this->toDo = $theArray;
         }
-        public function save(string $fileName){
+        public function save(string $fileName = 'todolist.serial'){
             $s = serialize($this);
             try{
                 file_put_contents($fileName, $s);
@@ -23,12 +24,34 @@
                 echo "Something goes wrong";
                 echo $err;
             }
-            
+            $this->toDo2 = $this->toDo; // JSON test purpose
+            $this->jsonSave();   // JSON test purpose
         }
-        public function load(string $fileName = 'ToDoList.serial'){
+        public function jsonSave(string $fileName = 'todolist.json'){ // JSON test purpose
+            $tmpJson = json_encode($this->toDo2, JSON_PRETTY_PRINT);
+            try{
+                file_put_contents($fileName, $tmpJson);
+            }catch(Exception $err){
+                echo "Something goes wrong";
+                echo $err;
+            }
+        }
+
+        public function load(string $fileName = 'todolist.serial'){
             try{
                 $tmp = unserialize(file_get_contents($fileName));
                 $this->toDo = $tmp->toDo;
+            }catch(Exception $err){
+                echo "Something goes wrong";
+                echo $err;
+            }
+            $this->jsonLoad();   // JSON test purpose
+        }
+
+        public function jsonLoad(string $fileName = 'todolist.json'){ // JSON test purpose
+            try{
+                $tmp = json_decode(file_get_contents($fileName), true);
+                $this->toDo2 = $tmp;
             }catch(Exception $err){
                 echo "Something goes wrong";
                 echo $err;
@@ -60,7 +83,7 @@
     if (file_exists('todolist.serial')) {
         $myToDo->load('todolist.serial');
     } else {
-        $myToDo->save('todolist.serial');      
+        $myToDo->save('todolist.serial');  
     }
 
 if(isset($_POST['checkedId'])){
