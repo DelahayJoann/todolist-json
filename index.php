@@ -1,4 +1,9 @@
 <?php include('./contenu.php'); ?>
+<?php
+/* echo '<pre>';
+print_r(array_keys($myToDo->getToDoElements()));
+echo '</pre>'; */
+?>
 <html lang="fr">
     <head>
         <title>ToDo List</title>
@@ -60,18 +65,15 @@
             <div class="row d-flex flex-column pt-4 pl-4 pr-4" id="currentTask">
                 <h4>Tasks To Do:</h4>
                 <form class="dragContainer m-0" action="" method="post" id="form_aFaire" name="form_aFaire">
-                    <?php echo implode("", array_map(
-                        function($k,$v,$l,$a){
-                            if(!$a){
-                                if($l){ return '<div draggable="true" id='.$k.' class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');" checked="true">'.$v.'</div>';}
-                                return '<div draggable="true" id='.$k.' class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');">'.$v.'</div>';
-                            }
+                    <?php array_map(
+                        function($k,$v,$l){
+                            if($l){echo '<div draggable="true" id='.$k.' class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');" checked="true">'.$v.'</div>';}
+                            else{echo '<div draggable="true" id='.$k.' class="text-wrap draggable box"><input type="checkbox" name="task[]" id="task-'.$k.'" value="'.$k.'" onclick="boxChecked('.$k.');">'.$v.'</div>';}
                         },
-                        array_keys(array_column($myToDo->getToDoElements(), "content")),
-                        array_values(array_column($myToDo->getToDoElements(), "content")),
-                        array_values(array_column($myToDo->getToDoElements(), "checked")),
-                        array_values(array_column($myToDo->getToDoElements(), "archived"))
-                    )); ?>
+                        array_keys(array_slice($myToDo->getToDoElements(), 0, 7,true)),
+                        array_values(array_column(array_slice($myToDo->getToDoElements(), 0, 7), "content")),
+                        array_values(array_column(array_slice($myToDo->getToDoElements(), 0, 7), "checked")),
+                    ); ?>
                     <button type="submit" id="button_archive" class='m-4'>Archive</button>
                 </form>
             </div>
@@ -89,15 +91,12 @@
             <div class="row d-flex flex-column p-4" id="archivedTask">
                 <h4>Archived Tasks:</h4>
                 <div id="archivedDiv">
-                    <?php echo implode("", array_map(
-                        function($v,$a){
-                            if($a){
-                                return '<s><div class="archived"><input type="checkbox" checked disabled="disabled">'.$v.'</div></s>';
-                            }
+                    <?php array_map(
+                        function($v){
+                                echo '<s><div class="archived"><input type="checkbox" checked disabled="disabled">'.$v.'</div></s>';
                         },
-                        array_values(array_column($myToDo->getToDoElements(), "content")),
-                        array_values(array_column($myToDo->getToDoElements(), "archived"))
-                    )); ?>
+                        array_reverse(array_values(array_column(array_slice($myToDo->getArchivedElements(), 0, 7), "content"))),
+                    ); ?>
                 </div>
             </div>
 

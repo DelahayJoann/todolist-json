@@ -2,7 +2,8 @@
     // The list class
     class ToDoList{
         private $toDo = [];
-        private $toDo2 = []; // JSON test purpose
+        private $archive = [];
+        //private $toDo2 = []; // JSON test purpose
 
         public function __construct(){
 
@@ -12,6 +13,14 @@
         }
         public function getToDoElements(){
             return $this->toDo;
+        }
+        public function sendArchive($id){
+            $this->archive[] = $this->toDo[$id];
+            unset($this->toDo[$id]);
+        }
+        
+        public function getArchivedElements(){
+            return $this->archive;
         }
         public function setToDoElements($theArray){
             $this->toDo = $theArray;
@@ -24,8 +33,8 @@
                 echo "Something goes wrong";
                 echo $err;
             }
-            $this->toDo2 = $this->toDo; // JSON test purpose
-            $this->jsonSave();   // JSON test purpose
+            //$this->toDo2 = $this->toDo; // JSON test purpose
+            //$this->jsonSave();   // JSON test purpose
         }
         public function jsonSave(string $fileName = 'todolist.json'){ // JSON test purpose
             $tmpJson = json_encode($this->toDo2, JSON_PRETTY_PRINT);
@@ -41,11 +50,12 @@
             try{
                 $tmp = unserialize(file_get_contents($fileName));
                 $this->toDo = $tmp->toDo;
+                $this->archive = $tmp->archive;
             }catch(Exception $err){
                 echo "Something goes wrong";
                 echo $err;
             }
-            $this->jsonLoad();   // JSON test purpose
+            //$this->jsonLoad();   // JSON test purpose
         }
 
         public function jsonLoad(string $fileName = 'todolist.json'){ // JSON test purpose
@@ -94,7 +104,7 @@ if(isset($_POST['checkedId'])){
 }
 if(isset($_POST['task'])){
     foreach ($_POST['task'] as $key => $value){
-        $myToDo->getToDoElements()[$value]->setArchived(TRUE);
+        $myToDo->sendArchive($value);
     }
     $myToDo->save('todolist.serial');
     $_POST = array();
