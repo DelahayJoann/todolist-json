@@ -77,7 +77,7 @@
             </div>
 
             <!-- ADD TASK -->
-            <div class="row d-flex justify-content-center p-4" id="addTask">
+            <div class="row d-flex flex-column pt-4 pl-4 pr-4" id="addTask">
                 <h4>Add Task To Do:</h4>
                 <form action="" method="post" id="form_addTask" name="form_addTask">
                     <textarea name="addTask" id="task" cols="30" rows="2" class="col-12"></textarea>
@@ -88,7 +88,7 @@
             <!-- ARCHIVED TASK -->
             <div class="row d-flex flex-column p-4" id="archivedTask">
                 <h4>Archived Tasks:</h4>
-                <div>
+                <div id="archivedDiv">
                     <?php echo implode("", array_map(
                         function($v,$a){
                             if($a){

@@ -1,6 +1,13 @@
+@import url(https://fonts.googleapis.com/css2?family=Alfa+Slab+One);
 body {
-  background-color: #b0c7e9;
+  background-color: #717274;
   color: #1100ff;
+  font-family: "Alfa Slab One", cursive;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 30px;
 }
 
 button {
@@ -39,20 +46,89 @@ input {
 #currentTask {
   border: 1px solid black;
   border-radius: 15px;
+  background: url("../img/metal-plaque.jpg");
+  background-size: 100% auto;
+}
+#currentTask h4 {
+  text-align: center;
+  color: #744242b4;
+}
+#currentTask #form_aFaire {
+  background: url("../img/rouille.jpg") no-repeat center center text;
+  background-size: 100%;
+  color: transparent;
+  text-align: center;
+  letter-spacing: 1px;
+}
+#currentTask #form_aFaire input[type=checkbox] {
+  appearance: none;
+  background-color: #74424271;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 3px;
+}
+#currentTask #form_aFaire input[type=checkbox]:active, #currentTask #form_aFaire input[type=checkbox]:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+#currentTask #form_aFaire input[type=checkbox]:checked {
+  background-color: #744242;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
 }
 
 #addTask {
+  background: url("../img/metal-plaque.jpg");
+  background-size: 100% auto;
   border: 1px solid black;
   border-radius: 15px;
-  height: 240px;
+  height: 200px;
+}
+#addTask h4 {
+  text-align: center;
+  color: #744242b4;
 }
 #addTask #task {
   resize: none;
 }
+#addTask #form_addTask {
+  text-align: center;
+}
 
 #archivedTask {
+  background: url("../img/metal-plaque.jpg");
+  background-size: 100% auto;
   border: 1px solid black;
   border-radius: 15px;
+}
+#archivedTask h4 {
+  text-align: center;
+  color: #744242b4;
+}
+#archivedTask #archivedDiv {
+  background: url("../img/rouille.jpg") no-repeat center center text;
+  background-size: 100%;
+  color: transparent;
+  text-align: center;
+  letter-spacing: 1px;
+}
+#archivedTask #archivedDiv input[type=checkbox] {
+  appearance: none;
+  background-color: #74424271;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 3px;
+}
+#archivedTask #archivedDiv input[type=checkbox]:active, #archivedTask #archivedDiv input[type=checkbox]:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+#archivedTask #archivedDiv input[type=checkbox]:checked {
+  background-color: #744242;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
 }
 
 /*# sourceMappingURL=style.css.map */

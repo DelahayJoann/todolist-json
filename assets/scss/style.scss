@@ -1,6 +1,14 @@
+@import url(https://fonts.googleapis.com/css2?family=Alfa+Slab+One);
 body{
-    background-color: rgb(176, 199, 233);
+    background-color: rgb(113, 114, 116);
     color: rgb(17, 0, 255);
+    font:{
+        family: 'Alfa Slab One', cursive;
+        weight:normal;
+    }
+}
+h4{
+    font-size: 30px;
 }
 button{
     background-color: darkgray;
@@ -32,18 +40,92 @@ input{
 #currentTask{
     border: 1px solid black;
     border-radius: 15px;
-}
+    background:
+            url('../img/metal-plaque.jpg');
+            background-size: 100% auto;
 
-#addTask{
-    border: 1px solid black;
-    border-radius: 15px;
-    height: 240px;
-    #task{
-        resize: none;
+    h4{
+        text-align: center;
+        color: #744242b4;
+    }
+    #form_aFaire{
+        background:
+            url('../img/rouille.jpg') no-repeat center center text;
+            background-size:100%;
+        color: transparent;
+        text-align:center;
+        letter-spacing: 1px;
+        input[type="checkbox"]{
+            appearance: none;
+            background-color: #74424271;
+            border: 1px solid #cacece;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            padding: 9px;
+            border-radius: 3px;
+        }
+        input[type="checkbox"]:active, input[type="checkbox"]:checked:active {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+        }
+        input[type="checkbox"]:checked {
+            background-color: #744242;
+            border: 1px solid #adb8c0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+            color: #99a1a7;
+        }
     }
 }
 
-#archivedTask{
+#addTask{
+    background:
+            url('../img/metal-plaque.jpg');
+            background-size: 100% auto;
+    h4{
+        text-align: center;
+        color: #744242b4;
+    }
     border: 1px solid black;
     border-radius: 15px;
+    height: 200px;
+    #task{
+        resize: none;
+    }
+    #form_addTask{
+        text-align: center;
+    }
+}
+#archivedTask{
+    background:
+            url('../img/metal-plaque.jpg');
+            background-size: 100% auto;
+    h4{
+        text-align: center;
+        color: #744242b4;
+    }
+    border: 1px solid black;
+    border-radius: 15px;
+    #archivedDiv{
+        background:
+            url('../img/rouille.jpg') no-repeat center center text;
+            background-size:100%;
+        color: transparent;
+        text-align:center;
+        letter-spacing: 1px;
+        input[type="checkbox"]{
+            appearance: none;
+            background-color: #74424271;
+            border: 1px solid #cacece;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            padding: 9px;
+            border-radius: 3px;
+        }
+        input[type="checkbox"]:active, input[type="checkbox"]:checked:active {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+        }
+        input[type="checkbox"]:checked {
+            background-color: #744242;
+            border: 1px solid #adb8c0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+            color: #99a1a7;
+        }
+    }
 }
