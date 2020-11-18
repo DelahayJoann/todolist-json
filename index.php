@@ -104,5 +104,10 @@ echo '</pre>'; */
 
         </div>
         <script src="./assets/js/index.js"></script>
+        <script>
+            window.addEventListener("DOMContentLoaded", (event) => {
+                document.getElementById("task").focus();
+            });
+        </script>
     </body>
 </html>
